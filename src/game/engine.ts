@@ -1363,7 +1363,7 @@ export class BrickBreaker {
     ctx.font = "500 22px Outfit, sans-serif";
     ctx.textAlign = "center";
     ctx.textBaseline = "alphabetic";
-    ctx.fillText("Version 3.0.0  ·  Android 15 and up", frame.w / 2, 990);
+    ctx.fillText("Version 3.1.0  ·  Android 15 and up", frame.w / 2, 990);
     this.iconButton(ctx, "music", 40, 1148, this.musicOn ? "MUS" : "OFF", this.musicOn);
     this.iconButton(ctx, "sfx", 156, 1148, this.sfxOn ? "SFX" : "OFF", this.sfxOn);
   }
@@ -1408,7 +1408,7 @@ export class BrickBreaker {
     ctx.font = "500 22px Outfit, sans-serif";
     ctx.textAlign = "center";
     ctx.textBaseline = "alphabetic";
-    ctx.fillText("Version 3.0.0", frame.w / 2, extras);
+    ctx.fillText("Version 3.1.0", frame.w / 2, extras);
     this.iconButton(ctx, "music", frame.w / 2 - 116, extras + 28, this.musicOn ? "MUS" : "OFF", this.musicOn);
     this.iconButton(ctx, "sfx", frame.w / 2 + 20, extras + 28, this.sfxOn ? "SFX" : "OFF", this.sfxOn);
   }

@@ -13,29 +13,33 @@ export function BrickGame() {
     return () => game.stop();
   }, []);
 
+  const installed = typeof window !== "undefined" && window.location.protocol === "file:";
+
   return (
     <main className="shell">
-      <div className="apk-bar">
-        <button
-          type="button"
-          className="apk-save"
-          onClick={() => {
-            setNote("Saving the APK...");
-            void saveApkFile().then((result) => {
-              if (result === "shared") {
-                setNote("Choose Files or Downloads, then open the APK and tap Install.");
-              } else if (result === "saved") {
-                setNote("Open Downloads, tap BrickBreakerBold.apk, then tap Install.");
-              } else {
-                setNote("If a page opened, go back and tap Download APK again.");
-              }
-            });
-          }}
-        >
-          Download APK
-        </button>
-        <p>{note}</p>
-      </div>
+      {installed ? null : (
+        <div className="apk-bar">
+          <button
+            type="button"
+            className="apk-save"
+            onClick={() => {
+              setNote("Saving the APK...");
+              void saveApkFile().then((result) => {
+                if (result === "shared") {
+                  setNote("Choose Files or Downloads, then open the APK and tap Install.");
+                } else if (result === "saved") {
+                  setNote("Open Downloads, tap BrickBreakerBold.apk, then tap Install.");
+                } else {
+                  setNote("If a page opened, go back and tap Download APK again.");
+                }
+              });
+            }}
+          >
+            Download APK
+          </button>
+          <p>{note}</p>
+        </div>
+      )}
       <canvas ref={ref} className="stage" aria-label="BrickBreaker Bold" />
     </main>
   );
