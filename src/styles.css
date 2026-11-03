@@ -1,0 +1,14 @@
+@import "tailwindcss";
+
+@layer base {
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+
+  html,
+  body {
+    background: #061018;
+    color: #f4efe4;
+  }
+}

@@ -1,0 +1,13 @@
+node_modules
+dist
+.output
+.vercel
+.tanstack
+screenshots
+attachments
+artifacts
+android/*.jks
+android/*.keystore
+*.log
+
+.grok/
